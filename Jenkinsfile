@@ -12,5 +12,15 @@ pipeline {
                 sh 'docker --version'
             }
         }
+        stage('Checking number of Containers running') {
+            steps {
+                sh 'docker ps -a'
+            }
+        }
+        stage('Checking number of docker images existing') {
+            steps {
+                sh 'docker images'
+            }
+        }
     }
 }
