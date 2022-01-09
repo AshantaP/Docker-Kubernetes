@@ -22,5 +22,11 @@ pipeline {
                 sh 'docker images'
             }
         }
+        stage('Download Docker Image') {
+            steps {
+                sh 'docker pull ubuntu'
+                sh 'docker images'
+            }
+        }
     }
 }
