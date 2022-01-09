@@ -28,5 +28,10 @@ pipeline {
                 sh 'docker images'
             }
         }
+        stage('Docker Service Status') {
+            steps {
+                sh 'systemctl status docker'
+            }
+        }
     }
 }
