@@ -7,5 +7,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('Checking Docker Version') {
+            steps {
+                sh 'docker --version'
+            }
+        }
     }
 }
