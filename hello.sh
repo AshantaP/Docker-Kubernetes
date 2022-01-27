@@ -1,3 +1,9 @@
-#!/bin/bash
-echo "Hello World"
-ping -c 10 $IP_ADDRESS
+#! /bin/bash
+
+echo "Control statement"
+
+
+if [ $NAME_HUMAN = "sunny" ]
+then
+        echo "Hi $NAME_HUMAN"
+fi
