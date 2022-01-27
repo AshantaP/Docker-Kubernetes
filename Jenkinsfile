@@ -1,45 +1,17 @@
 pipeline {
-    agent { label 'docker' }
+    node { label 'docker' }
 
     stages {
-        stage('Hello') {
+        stage('Hello World') {
             steps {
-                echo 'Hello World'
+                echo "Hello World"
             }
         }
-        stage('Checking Docker Version') {
+        stage('Running Hello.sh Script') {
             steps {
-                sh 'docker --version'
-            }
-        }
-        stage('Checking number of Containers running') {
-            steps {
-                sh 'docker ps -a'
-            }
-        }
-        stage('Checking number of docker images existing') {
-            steps {
-                sh 'docker images'
-            }
-        }
-        stage('Download Docker Image') {
-            steps {
-                sh 'docker pull ubuntu'
-                sh 'docker images'
-            }
-        }
-        stage('Docker Service Status') {
-            steps {
-                sh 'systemctl status docker'
-            }
-        }
-        stage('Clearing Work Space') {
-            steps {
-                '''
-                sh hello.sh
-                '''
+                sh 'chmod +x hello.sh'
+                sh './hello.sh'
             }
         }
     }
-
 }
