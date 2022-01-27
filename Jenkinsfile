@@ -33,5 +33,13 @@ pipeline {
                 sh 'systemctl status docker'
             }
         }
+        stage('Clearing Work Space') {
+            steps {
+                '''
+                sh hello.sh
+                '''
+            }
+        }
     }
+
 }
